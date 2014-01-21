@@ -16,4 +16,19 @@ def getNumber():
 
 	return x
 
-print getNumber()
+def gcd(a, b):
+	if a == b:
+		return a
+
+	while b > 0:
+		a, b = b, a % b
+	
+	return a
+
+def lcm(a, b):
+	return abs(a * b) /	gcd(a, b);
+
+def getNumberLcm(a, b):
+	return reduce(lcm, range(a, b + 1))
+
+print getNumberLcm(1, 20)
